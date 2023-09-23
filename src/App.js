@@ -2,11 +2,15 @@ import React, { useState, useEffect } from 'react';
 
 function IntervalTimer() {
   const shortSound = () =>{
-   new Audio("button70.mp3").play(); 
+    if (hasInteracted) {
+      new Audio("button70.mp3").play(); 
+    }
   }
 
   const longSound = () =>{
-    new Audio("button79.mp3").play(); 
+    if (hasInteracted) {
+      new Audio("button79.mp3").play(); 
+    }
   }
   const [hasInteracted, setHasInteracted] = useState(false);
   const [intervals, setIntervals] = useState([30, 30]);
