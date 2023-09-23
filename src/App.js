@@ -8,12 +8,18 @@ function IntervalTimer() {
   const longSound = () =>{
     new Audio("button79.mp3").play(); 
   }
-
+  const [hasInteracted, setHasInteracted] = useState(false);
   const [intervals, setIntervals] = useState([30, 30]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [timeLeft, setTimeLeft] = useState(intervals[0]);
   const [cycleCount, setCycleCount] = useState(0);
   const [isRunning, setIsRunning] = useState(false);
+
+  // ユーザーが初めてインタラクションを取ったときに hasInteracted を true に設定
+  const handleFirstInteraction = () => {
+    setHasInteracted(true);
+  };
+
 
   const toggleTimer = () => {
     setIsRunning(!isRunning);
@@ -81,6 +87,7 @@ function IntervalTimer() {
         Current Cycle: {cycleCount}
       </div>
       <button onClick={resetCycleCount}>Reset Cycle Count</button>
+      <button onClick={handleFirstInteraction}>Enable Sound</button>
     </div>
   );
 }
