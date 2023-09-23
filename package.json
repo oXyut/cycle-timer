@@ -12,6 +12,7 @@
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
+  "homepage": "https://oxyut.github.io/cycle-timer/",
   "scripts": {
     "start": "react-scripts start",
     "build": "cross-env PUBLIC_URL=/oxyut react-scripts build",
